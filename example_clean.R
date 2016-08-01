@@ -28,7 +28,7 @@ plot(res)
 pr<-computeProbBayes(res)
 cat("gof2 (with covariates) : estimation of p(H_0 | Y) : ", pr$pH0_Y, "\n")
 
-m<-computegraphon(res, L=50, nbsim=40, prob=TRUE)
+m<-computegraphon(res, L=100, nbsim=1000, prob=TRUE)
 plot.graphon(m, zlim=c(0,1))
 
 # mixer : no covariates
@@ -38,5 +38,5 @@ plot(res2, frame=c(1,2))
 pr2<-computeProbBayes(res2)
 cat("mixer (no covariates) : estimation of p(H_0 | Y) : ", pr2$pH0_Y, "\n")
 
-m2<-computegraphon(res2, L=50, nbsim=40, prob=TRUE)
+m2<-computegraphon(res2, L=100, nbsim=1000, prob=TRUE)
 plot.graphon(m2)
